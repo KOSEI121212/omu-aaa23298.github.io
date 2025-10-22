@@ -4,8 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webシステム構築基礎 第2回課題</title>
+    <style>
+        .bmi-box {
+      width: fit-content;
+      margin: 20px auto;
+      padding: 20px 30px;
+      border: 3px solid #28a745;
+      border-radius: 10px;
+      background-color: #f0fff4;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: left;
+      font-size: 1.1em;
+    }
+
+    h2 {
+      text-align: center;
+      color: #28a745;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 100px;
+    }
+
+    output {
+      font-weight: bold;
+      color: #007bff;
+    }
+    </style>
 </head>
 <body>
+　<div class="bmi-box">
+    <h2>BMI指標計算</h2>
+    <form oninput="bmi.value = Math.round(Number(weight.value) / Math.pow(Number(height.value)/100, 2) * 10) / 10">
+      <p><label>体重(kg)：<input name="weight" type="number" step="any"></label></p>
+      <p><label>身長(cm)：<input name="height" type="number" step="any"></label></p>
+      <p><label>BMI：<output name="bmi"></output></label></p>
+    </form>
+    <p style="font-size:0.9em; color:#333;">
+      <strong>BMIの目安：</strong><br>
+      18.5未満：低体重 ／ 18.5～25未満：標準 ／ 25以上：肥満
+    </p>
+  </div>
     <h1>Webシステム構築基礎 第2回課題</h1>
     <p>山本晃聖（AAA23298）</p>
 
