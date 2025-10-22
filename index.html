@@ -4,8 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webシステム構築基礎 第2回課題</title>
+
+    <style>
+    #clock {
+      font-size: 2em;
+      font-weight: bold;
+      color: #007bff;
+      text-align: center;
+      margin-top: 20px;
+      }
+    </style>
 </head>
 <body>
+
+  <div id="clock"></div>
+
+  <script>
+    // 時計を更新する関数
+    function updateClock() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById("clock").textContent = `${hours}:${minutes}:${seconds}`;
+    }
+
+    // ページ読み込み時と、1秒ごとに更新
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
+
+    
     <h1>Webシステム構築基礎 第2回課題</h1>
     <p>山本晃聖（AAA23298）</p>
 
